@@ -166,10 +166,10 @@ class PropertyRAG:
 
         # Pola regex untuk kamar mandi/WC - menambahkan variasi
         wc_patterns = [
-            r"(\d+)\s*(?:kamar\s*mandi|wc|toilet|bathroom|km|kmandi)",
-            r"(?:dengan|ada|memiliki)\s*(?:kamar\s*mandi|wc|toilet)?\s*(\d+)",
-            r"(\d+)(?:kamar\s*mandi|wc|toilet|km)",
-            r"(?:toilet|km|kamar\s*mandi)(?:nya)?\s*(\d+)",
+            r"(\d+)\s*(?:kamar\s*mandi|wc)\b",
+            r"(?:dengan|ada|memiliki)\s*(?:kamar\s*mandi|wc)\s*(\d+)",
+            r"(\d+)(?:kamar\s*mandi|wc)\b",
+            r"(?:kamar\s*mandi|wc)(?:nya)?\s*(\d+)",
             r"k(?:amar)?\.?\s*m(?:andi)?\s*(\d+)",
         ]
 
