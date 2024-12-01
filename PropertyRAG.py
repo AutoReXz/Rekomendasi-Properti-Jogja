@@ -194,20 +194,21 @@ class PropertyRAG:
             r"(?:rp\.?\s*)?(\d+(?:[,.]\d+)?)\s*(?:milyar|miliar|milyard|m\b)(?:\s*(?:rupiah|rp))?",
             r"(?:rp\.?\s*)?(\d+(?:[,.]\d+)?)\s*(?:juta|jt|j\b)(?:\s*(?:rupiah|rp))?",
         ]
-        # Add new patterns for luas tanah
+        
+        # Add new patterns for luas tanah with more flexibility
         luas_tanah_patterns = [
-            r"(?:luas|lt|land\s*size)\s*(?:tanah)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(?:tanah(?:nya)?|lot)\s*(?:seluas|ukuran)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(?:tanah|lot)\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)\s*(?:tanah|lot)",
+            r"(?:luas|lt|land\s*size|tanah)\s*(?:tanah)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(?:tanah(?:nya)?|lot)\s*(?:seluas|ukuran)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(?:tanah|lot)\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?\s*(?:tanah|lot)?",
         ]
 
-        # Add new patterns for luas bangunan
+        # Add new patterns for luas bangunan with more flexibility
         luas_bangunan_patterns = [
-            r"(?:luas|lb|building\s*size)\s*(?:bangunan)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(?:bangunan(?:nya)?)\s*(?:seluas|ukuran)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(?:bangunan)\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)",
-            r"(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)\s*(?:bangunan)",
+            r"(?:luas|lb|building\s*size|bangunan)\s*(?:bangunan)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(?:bangunan(?:nya)?)\s*(?:seluas|ukuran)?\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(?:bangunan)\s*(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?",
+            r"(\d+(?:[,.]\d+)?)\s*(?:m2|meter|m²)?\s*(?:bangunan)?",
         ]
 
         def normalize_price_string(price_str):
